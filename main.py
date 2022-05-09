@@ -1,7 +1,7 @@
 import eel
 import pyowm
 
-owm = pyowm.OWM("f2a349d52db19dfdd2bd50bdb6ba4573")
+owm = pyowm.OWM("your api")
 
 
 @eel.expose
