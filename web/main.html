@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <title>Weather</title>
+       <script src="eel.js"></script>
+     <link rel="icon" type="image/png" href="">
+     <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <input id="location" type="text" placeholder="Enter city or country..." required="" value="Kharkiv, Ukraine">
+
+    <button id="show">GET RESULT</button>
+
+    <hr>
+
+    <div id="info"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        async function display_weather() {
+             let place = document.getElementById('location').value;
+
+             let res = await eel.get_weather(place)();
+             document.getElementById('info').innerHTML = res;
+        }
+
+        jQuery(show).on('click', function() {
+             display_weather();
+        });
+    </script>
+</body>
+</html>
